@@ -8,16 +8,22 @@ import java.util.Map;
 import org.junit.Assert;
 import org.junit.Test;
 
+import ua.com.fan.salarycalc.employees.Developer;
+import ua.com.fan.salarycalc.employees.Employee;
+import ua.com.fan.salarycalc.employees.Manager;
+import ua.com.fan.salarycalc.enam.Post;
+import ua.com.fan.salarycalc.service.Accountant;
+
 public class AccountantTest {
 
 	@Test
 	public void testGetSalary() {
 
 		Accountant acc = new Accountant();
-		Employee developer = new Developer(1, 3000, 160, 320);
-		Manager manager = new Manager(2, 4000, 160, 320);
+		Employee developer = new Developer(1, 3000, 160, 320, Post.DEVELOPER);
+		Manager manager = new Manager(2, 4000, 160, 320, Post.MANAGER);
 
-		List<Employee> employees = new ArrayList<>();
+		List<Employee> employees = new ArrayList<Employee>();
 		employees.add(developer);
 		employees.add(manager);
 

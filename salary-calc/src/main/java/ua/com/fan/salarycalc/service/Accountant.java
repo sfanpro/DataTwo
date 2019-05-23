@@ -1,8 +1,10 @@
-package ua.com.fan.salarycalc;
+package ua.com.fan.salarycalc.service;
 
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+
+import ua.com.fan.salarycalc.employees.Employee;
 
 public class Accountant {
 

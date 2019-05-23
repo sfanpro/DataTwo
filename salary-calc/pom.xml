@@ -9,6 +9,7 @@
 	<description>Program for calculate salary of employees</description>
 
 	<properties>
+	<java.version>1.8</java.version>
 		<!-- Use the latest version whenever possible. -->
 		<jackson.version>2.9.8</jackson.version>
 	</properties>
@@ -34,8 +35,6 @@
 			<artifactId>jettison</artifactId>
 			<version>1.4.0</version>
 		</dependency>
-
-
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -43,4 +42,27 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <shadedArtifactAttached>true</shadedArtifactAttached>
+              <shadedClassifierName>jackofall</shadedClassifierName> 
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+	
 </project>

@@ -1,4 +1,6 @@
-package ua.com.fan.salarycalc;
+package ua.com.fan.salarycalc.employees;
+
+import ua.com.fan.salarycalc.enam.Post;
 
 public abstract class Employee {
 
@@ -6,12 +8,14 @@ public abstract class Employee {
 	private double rate;
 	private double hoursInMounth;
 	private double workedHour;
+	private Post position;
 
-	public Employee(int id, double rate, double hoursInMounth, double workedHour) {
+	public Employee(int id, double rate, double hoursInMounth, double workedHour, Post position) {
 		this.id = id;
 		this.rate = rate;
 		this.hoursInMounth = hoursInMounth;
 		this.workedHour = workedHour;
+		this.position = position;
 	}
 
 	public int getId() {
@@ -44,6 +48,14 @@ public abstract class Employee {
 
 	public void setWorkedHour(double workedHour) {
 		this.workedHour = workedHour;
+	}
+
+	public Post getPosition() {
+		return position;
+	}
+
+	public void setPosition(Post position) {
+		this.position = position;
 	}
 
 	public double getWorkedPercent() {
